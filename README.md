@@ -1,3 +1,3 @@
 # DIRFUZZ
 
-The Script is still slower so need to make it faster.
+The Script is still slow so need to make it faster.
