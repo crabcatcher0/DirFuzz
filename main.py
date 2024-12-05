@@ -61,6 +61,7 @@ def main():
 
     total_words_tried = 0
     total_requests_sent = 0
+    req_per_sec = 0
 
     urls_to_scan = [(url, 0)]
     scanned_urls = set()
