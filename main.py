@@ -59,7 +59,7 @@ def main():
 
     args = parser.parse_args()
     headers = parse_header(args.headers)
-    
+
     url = args.url.strip()
     if not url.endswith("/"):
         url += "/"
@@ -91,7 +91,7 @@ def main():
                 max_depth=max_depth,
                 delay=delay,
                 current_depth=current_depth,
-                headers=headers
+                headers=headers,
             )
             total_words_tried += words_tried
             total_requests_sent += requests_sent
