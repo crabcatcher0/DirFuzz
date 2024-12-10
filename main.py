@@ -3,6 +3,7 @@ import logging
 
 
 from bust.buster import DirFuzz
+from bust.utils.header_parse import parse_header
 
 
 logging.basicConfig(
@@ -48,9 +49,17 @@ def main():
         default=0,
         help="Delay time in seconds between requests (default: 0)",
     )
+    parser.add_argument(
+        "-H",
+        "--headers",
+        type=str,
+        default=None,
+        help="Headers: e.g: 'Key: Value'",
+    )
 
     args = parser.parse_args()
-
+    headers = parse_header(args.headers)
+    
     url = args.url.strip()
     if not url.endswith("/"):
         url += "/"
@@ -82,6 +91,7 @@ def main():
                 max_depth=max_depth,
                 delay=delay,
                 current_depth=current_depth,
+                headers=headers
             )
             total_words_tried += words_tried
             total_requests_sent += requests_sent

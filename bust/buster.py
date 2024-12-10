@@ -11,6 +11,7 @@ class DirFuzz:
         max_depth: int,
         delay: float,
         current_depth: int = 0,
+        headers: dict = None
     ):
         total_words_tried = 0
         total_requests_sent = 0
@@ -34,7 +35,7 @@ class DirFuzz:
                         main_to_search = f"{url}{line.strip()}/"
 
                         try:
-                            response = session.get(main_to_search, timeout=5)
+                            response = session.get(main_to_search, timeout=5, headers=headers)
                             total_requests_sent += 1
 
                             STATUS_CODES = [200, 301, 302, 401, 403]
