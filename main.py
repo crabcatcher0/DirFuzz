@@ -16,7 +16,7 @@ def main():
         description=(
             "Directory scanner for web applications.\n\n"
             "Example:\n"
-            "  python main.py -u http://example.com/ -w wordlist.txt -D 2 -T 0.5 -M\n"
+            "python main.py -u http://example.com/ -w wordlist.txt -D 2 -T 0.5 -M\n"
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
